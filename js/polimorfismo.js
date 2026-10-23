@@ -24,7 +24,7 @@ class Figura {
 class Circulo extends Figura {
 
   constructor() {
-    
+    super("Circulo");
   }
 
   calcularArea() {
