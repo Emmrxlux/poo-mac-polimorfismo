@@ -79,12 +79,40 @@ class Triangulo extends Figura {
   }
 }
 
+class Trapecio extends Figura {
+  #baseMayor;
+  #baseMenor;
+  #altura;
+  #lado1;
+  #lado2;
+
+  constructor(baseMayor, baseMenor, altura, lado1, lado2) {
+    super("Trapecio");
+    this.#baseMayor = baseMayor;
+    this.#baseMenor = baseMenor;
+    this.#altura = altura;
+    this.#lado1 = lado1;
+    this.#lado2 = lado2;
+  }
+
+  get area() {
+    return ((this.#baseMayor + this.#baseMenor) * this.#altura) / 2;
+  }
+
+  get perimetro() {
+    return this.#baseMayor + this.#baseMenor + this.#lado1 + this.#lado2;
+  }
+}
+
 
 let r = new Rectangulo(5, 3);
 let c = new Circulo(4);
 let t = new Triangulo(6, 4, 5, 5, 6);
 
-let figuras = [r, c, t];
+let trapecio1 = new Trapecio(10, 6, 4, 5, 5);
+let trapecio2 = new Trapecio(12, 8, 5, 6, 6);
+
+let figuras = [r, c, t, trapecio1, trapecio2];
 
 let resultado = document.getElementById("resultado");
 
